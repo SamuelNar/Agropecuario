@@ -445,3 +445,115 @@
     opacity: 1;
   }
 }
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  .start-image {
+    width: 80%; /* Ajusta el tamaño de la imagen en dispositivos móviles */
+  }
+
+  .start-text {
+    font-size: 2rem; /* Reduce el tamaño del texto */
+  }
+
+  .quiz-container {
+    width: 90%; /* Ajusta el ancho del contenedor */
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+
+  .quiz-content {
+    font-size: 1rem; /* Reduce el tamaño del texto */
+    padding: 10px; /* Ajusta el relleno */
+  }
+
+  .question-info {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+  }
+
+  .blue-corner {
+    width: 40px; /* Ajusta el tamaño del corner */
+    height: 40px;
+  }
+
+  .feedback-text {
+    font-size: 30px; /* Ajusta el tamaño del texto de feedback */
+  }
+
+  .mani-image {
+    max-width: 150px; /* Ajusta el tamaño de la imagen */
+    right: -60px; /* Ajusta la posición de la imagen */
+  }
+
+  .congrats-overlay {
+    padding: 20px; /* Ajusta el padding */
+  }
+
+  .congrats-content {
+    max-width: 100%; /* Ajusta el tamaño máximo del contenedor */
+    max-height: none; /* Permite que la altura se ajuste automáticamente */
+  }
+
+  .congrats-image {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+  }
+
+  .congrats-text, .specialist-text {
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  }
+}
+
+/* Media Query para tabletas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .start-image {
+    width: 70%; /* Ajusta el tamaño de la imagen en tabletas */
+  }
+
+  .start-text {
+    font-size: 2.5rem; /* Ajusta el tamaño del texto */
+  }
+
+  .quiz-container {
+    width: 80%; /* Ajusta el ancho del contenedor */
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+
+  .quiz-content {
+    font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    padding: 15px; /* Ajusta el relleno */
+  }
+
+  .question-info {
+    font-size: 16px; /* Ajusta el tamaño del texto */
+  }
+
+  .blue-corner {
+    width: 45px; /* Ajusta el tamaño del corner */
+    height: 45px;
+  }
+
+  .feedback-text {
+    font-size: 35px; /* Ajusta el tamaño del texto de feedback */
+  }
+
+  .mani-image {
+    max-width: 175px; /* Ajusta el tamaño de la imagen */
+    right: -90px; /* Ajusta la posición de la imagen */
+  }
+
+  .congrats-overlay {
+    padding: 30px; /* Ajusta el padding */
+  }
+
+  .congrats-content {
+    max-width: 90%; /* Ajusta el tamaño máximo del contenedor */
+    max-height: 80vh; /* Ajusta la altura máxima */
+  }
+
+  .congrats-image {
+    max-width: 90%; /* Ajusta el tamaño máximo de la imagen */
+  }
+
+  .congrats-text, .specialist-text {
+    font-size: 1.8rem; /* Ajusta el tamaño del texto */
+  }
+}

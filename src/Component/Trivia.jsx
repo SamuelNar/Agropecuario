@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import finImagen from "/assets/Fin.webp";
-import inicioImagen from "/assets/Maní.png";
+import inicioImagen from "/assets/Maníconborde.png";
 import maniImagen from "/assets/Personaje.webp";
 import imgCorner from "/assets/Formaazul.png"
 const Trivia = () => {

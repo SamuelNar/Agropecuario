@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import finImagen from "/assets/Fin.webp";
-import inicioImagen from "/assets/Inicio.webp";
+import inicioImagen from "/assets/Maní.png";
 import maniImagen from "/assets/Personaje.webp";
+import imgCorner from "/assets/Formaazul.png"
 const Trivia = () => {
   const questions = [
     {
@@ -49,9 +50,8 @@ const Trivia = () => {
       const feedbackMessage = isAnswerCorrect
         ? "¡Correcto! Seguimos en carrera."
         : "Upps, creo que va a tener que conocer más sobre el mundo del maní! Te esperamos en nuestro staff.";
-      const feedbackColor = isAnswerCorrect ? "#00FF00" : "#FF0000";
 
-      setFeedback({ message: feedbackMessage, color: feedbackColor });
+      setFeedback({ message: feedbackMessage});
 
       const feedbackDuration = isAnswerCorrect ? 3000 : 3000; // Ajusta el tiempo según sea necesario
 
@@ -149,12 +149,12 @@ const Trivia = () => {
                 <div className="border-right"></div>
                 <div className="border-bottom"></div>
                 <div className="border-left"></div>
-                <div
+                <img
+                  src={imgCorner}
                   className={`blue-corner ${
                     feedback ? "feedback-visible" : ""
-                  } ${isGameStart ? "game-start" : ""}`}
-                  style={{ backgroundColor: feedback?.color }}
-                >
+                  } ${isGameStart ? "game-start" : ""}`}                  
+                />
                   {feedback && (
                     <span
                       className={`feedback-text ${
@@ -163,8 +163,7 @@ const Trivia = () => {
                     >
                       {feedback.message}
                     </span>
-                  )}
-                </div>
+                  )}            
                 <div className="fill"></div>
                 <div className="quiz-content">
                   <div className="question-info">
@@ -173,7 +172,7 @@ const Trivia = () => {
                     </span>
                   </div>
                   <div className="question-section">
-                    <h2>{questions[currentQuestion].question}</h2>
+                    <p>{questions[currentQuestion].question}</p>
                   </div>
                   <div className="answers-section">
                     {questions[currentQuestion].choices.map((choice, index) => (

@@ -1,3 +1,4 @@
+
 .App{
   display: flex;
   justify-content: center;
@@ -13,28 +14,54 @@
   font-weight: 400;
   font-style: normal;
 }
+
 .start-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+  height: 100vh; 
   text-align: center;
   cursor: pointer;
 }
 
+.start-image-wrapper {
+  position: relative;
+  width: 50%; 
+  height: auto;
+}
+
 .start-image {
-  width: 50%; /* Ajusta el tamaño de la imagen según tus necesidades */
+  width: 100%; 
   height: auto; 
   border-radius: 20px;
 }
+
+.start-image-left {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  max-width: 70px;
+  height: auto;
+  z-index: 1;
+}
+
+.start-image-right {
+  position: absolute;
+  bottom: 20px;
+  right: 70px;
+  max-width: 200px;
+  height: auto;
+  z-index: 1;
+}
+
 
 .start-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
-  font-size: 3rem; /* Ajusta este tamaño según lo que necesites */
+  font-size: 3rem; 
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -42,7 +69,7 @@
 
 
 .quiz-image {
-  max-width: 200px; /* Ajusta según el tamaño deseado */
+  max-width: 200px;
   height: auto;
 }
 
@@ -139,13 +166,13 @@
   align-items: center;
   justify-content: center;
   padding-right: 20px;
-  padding-right: 0; /* Elimina el padding derecho */
+  padding-right: 0;
 
 }
 
 .question-section p {
-  font-size: 1.5rem; /* Ajusta el tamaño de la fuente según tus preferencias */
-  margin-bottom: 10px; /* Agrega un margen inferior para separar la pregunta de las respuestas */
+  font-size: 1.5rem; 
+  margin-bottom: 10px; 
   margin-right: 3px;
 }
 
@@ -154,8 +181,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0; /* Elimina el padding */
-  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 0;
+  width: 100%; 
 }
 
 .answer-option {
@@ -172,6 +199,18 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  
+}
+
+.answer-option .checkbox-container {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10px;
+  background-color: #88baca;
+  border-radius: 8px 8px 8px 0;
+  overflow: visible; /* Permite que el ícono sobresalga */
 }
 
 .answer-option label::before {
@@ -179,23 +218,47 @@
   width: 2rem;
   height: 2rem;
   margin-right: 10px;
-  background-color: #88baca; /* Fondo azul claro */
+  background-color: #88baca; 
+  border-radius: 8px 8px 8px 0;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.answer-option input[type="checkbox"]:checked + label .checkbox-container::after {
+  content: '';
+  position: absolute;
+  top: -10px; /* Ajusta para que sobresalga */
+  left: -10px; /* Ajusta para que sobresalga */
+  width: 3rem;
+  height: 3rem;
+  background-image: url('/assets/check.png');
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  border-radius: 8px 8px 8px 0;
+  z-index: 2; /* Asegura que el ícono esté por encima */
 }
 
 .answer-option input[type="checkbox"]:checked + label::before {
   background-image: url('/assets/check.png');
   background-color: #88baca;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
 }
 
 .answer-option.incorrect input[type="checkbox"]:checked + label::before {
   background-image: url('/assets/uncheck.png');
+  background-position: center;
+  background-size: 80%;
 }
 
 .question-info {
-  color: #0000FF; /* Puedes cambiar el color según prefieras */
+  font-size: 25px;
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  color: #0000FF; 
 }
 
 .blue-corner {
@@ -274,16 +337,16 @@
     height: auto;
   }
   20% {
-    width: calc(100% - 70px);
-    height: calc(100% - 70px);
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
   }
   80% {
-    width: calc(100% - 70px);
-    height: calc(100% - 70px);
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
   }
   87%{
-    width: calc(100% - 70px);
-    height: calc(100% - 70px);
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
   }
   100% {
     width: 70px;
@@ -318,27 +381,31 @@
 }
 
 .feedback-text.correct {
+  align-items: center;
+  text-align: center;
   font-size: 45px;
-  animation: fadeIn 1s ease-out forwards,fadeOut 1s ease-out 1.7s forwards; /* Desaparece en sincronía con la reducción */
+  margin-top: 25px;
+  animation: fadeIn 1s ease-out forwards,fadeOut 1s ease-out 1.7s forwards; 
 }
 
 .feedback-text.incorrect {
   font-size: 35px;
-  animation: fadeIn 1s ease-out forwards, fadeOut 1s ease-out 1.7s forwards; /* Desaparece en sincronía con la reducción */
+  margin-top: 25px;
+  animation: fadeIn 1s ease-out forwards, fadeOut 1s ease-out 1.7s forwards; 
 }
 
 
 .quiz-wrapper {
-  position: relative; /* Necesario para que los elementos absolutos dentro de este contenedor se posicionen con respecto a él */
+  position: relative; 
 }
 
 .mani-image {
   position: absolute;
-  top: 80px; /* Ajusta según sea necesario */
-  right: -110px; /* Ajusta según sea necesario */
+  top: 80px;
+  right: -110px; 
   max-width: 200px;
   height: auto;
-  z-index: 20; /* Asegura que la imagen esté por encima del cuestionario */
+  z-index: 20; 
 }
 
 .congrats-overlay {
@@ -351,7 +418,6 @@
   justify-content: center;
   align-items: center;
   z-index: 30;
-  /* Sin fondo negro en el overlay */
 }
 
 .congrats-content {
@@ -361,18 +427,18 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 900px; /* Ajusta el tamaño según sea necesario */
-  max-height: 80vh; /* Ajusta la altura máxima según sea necesario */
+  max-width: 900px; 
+  max-height: 80vh; 
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente para el contenedor de la imagen */
-  border-radius: 20px; /* Opcional: agrega bordes redondeados */
+  background-color: rgba(0, 0, 0, 0.8); 
+  border-radius: 20px; 
 }
 
 .congrats-image {
-  max-width: 100%; /* Ajusta el tamaño según sea necesario */
+  max-width: 100%; 
   height: auto;
-  opacity: 0.7; /* Imagen sin opacidad para mantener el fondo negro visible */
-  animation: scaleUp 1s ease-out forwards; /* Imagen aparece primero */
+  opacity: 0.7;
+  animation: scaleUp 1s ease-out forwards; 
 }
 
 .congrats-text {
@@ -380,11 +446,12 @@
   font-weight: bold;
   color: white;
   position: absolute;
-  top: 20%; /* Ajusta para mantener el texto dentro de la imagen */
+  top: 20%; 
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  animation: fadeInText 1s ease-out 1s forwards, moveTextUp 1s ease-out 2s forwards; /* Aparece después de la imagen y luego se mueve hacia arriba */
+  animation: fadeInText 1s ease-out 1s forwards, moveTextUp 1s ease-out 2s forwards; 
+  
   z-index: 10;
   width: 100%;
   text-align: center;
@@ -393,16 +460,16 @@
 .specialist-text {
   font-size: 2.5rem;
   color: white;
-  margin-top: 20px; /* Ajusta el espacio debajo del texto */
+  margin-top: 20px; 
   opacity: 0;
-  animation: fadeInSpecialistText 1s ease-out 3s forwards; /* Aparece después del texto principal */
+  animation: fadeInSpecialistText 1s ease-out 3s forwards; 
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
-  position: absolute; /* Posiciona el texto sobre la imagen */
-  top: 50%; /* Ajusta la posición según sea necesario */
+  position: absolute;
+  top: 50%; 
   left: 50%;
-  transform: translate(-50%, -50%); /* Centra el texto */
+  transform: translate(-50%, -50%);
 }
 
 @keyframes scaleUp {
@@ -416,11 +483,11 @@
 
 @keyframes moveTextUp {
   from {
-    top: 20%; /* Empieza en el lugar inicial */
+    top: 20%; 
     transform: translate(-50%, -50%);
   }
   to {
-    top: 10%; /* Ajusta según sea necesario */
+    top: 10%; 
     transform: translate(-50%, -10%);
   }
 }

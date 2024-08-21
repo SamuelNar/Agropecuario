@@ -1,14 +1,10 @@
 import './App.css'
 import Trivia from './Component/Trivia'
-
-function App() {  
+function App() { 
   return (
-    <>
-      <div className="App">    
-        <Trivia />
-      </div>
-    </>
-  )
+    <div className='App'>
+      <Trivia />
+    </div>  )
 }
 
 export default App

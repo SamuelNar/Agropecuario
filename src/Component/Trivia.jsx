@@ -3,6 +3,8 @@ import finImagen from "/assets/Fin.webp";
 import inicioImagen from "/assets/Maníconborde.png";
 import maniImagen from "/assets/Personaje.webp";
 import imgCorner from "/assets/Formaazul.png"
+import Logo from "/assets/Logo.png"
+import imgCornerWhite from "/assets/Formablanca.png"
 const Trivia = () => {
   const questions = [
     {
@@ -113,17 +115,21 @@ const Trivia = () => {
   return (
     <div className="trivia-container">
       {!showCongratulations && !showQuiz ? (
-        <div className="start-container" onClick={handleStartQuiz}>
-          <img
-            src={inicioImagen}
-            alt="Desafío para MANÍaticos"
-            className="start-image"
-          />
-          <p className="start-text">
-            Desafío para <br />
-            MANÍaticos
-          </p>
-        </div>
+      <div className="start-container" onClick={handleStartQuiz}>
+      <div className="start-image-wrapper">
+        <img
+          src={inicioImagen}
+          alt="Desafío para MANÍaticos"
+          className="start-image"
+        />
+        <img src={imgCornerWhite} alt="Imagen Izquierda" className="start-image-left" />
+        <img src={Logo} alt="Imagen Derecha" className="start-image-right" />
+      </div>
+      <p className="start-text">
+        Desafío para <br />
+        MANÍaticos
+      </p>
+    </div>
       ) : (
         <>
           {showCongratulations ? (
@@ -168,7 +174,7 @@ const Trivia = () => {
                 <div className="quiz-content">
                   <div className="question-info">
                     <span>
-                      Pregunta {currentQuestion + 1} de {questions.length}
+                      {currentQuestion + 1}.
                     </span>
                   </div>
                   <div className="question-section">

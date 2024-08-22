@@ -1,4 +1,3 @@
-
 .App{
   display: flex;
   justify-content: center;
@@ -7,6 +6,7 @@
   background-image: url('/assets/background.webp');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .trivia-container {
@@ -58,7 +58,7 @@
 
 .start-text {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%); 
   font-size: 3rem; 
@@ -157,7 +157,7 @@
   animation: fadeIn 0.5s ease-out 3s forwards;
   display: flex;
   height: 100%;
-  color: #0000FF;
+  color: #2929b8;
 }
 
 
@@ -173,7 +173,7 @@
 .question-section p {
   font-size: 1.5rem; 
   margin-bottom: 10px; 
-  margin-right: 3px;
+  margin-right: 90px;
 }
 
 
@@ -442,7 +442,7 @@
 }
 
 .congrats-text {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: white;
   position: absolute;
@@ -451,14 +451,13 @@
   transform: translate(-50%, -50%);
   opacity: 0;
   animation: fadeInText 1s ease-out 1s forwards, moveTextUp 1s ease-out 2s forwards; 
-  
   z-index: 10;
   width: 100%;
   text-align: center;
 }
 
 .specialist-text {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: white;
   margin-top: 20px; 
   opacity: 0;
@@ -531,114 +530,62 @@
   }
 }
 
-/* Media Query para dispositivos móviles */
-@media (max-width: 768px) {
-  .start-image {
-    width: 80%; /* Ajusta el tamaño de la imagen en dispositivos móviles */
+@media screen and (max-width: 1024px) {
+  .App {
+    height: auto; /* Permite que el contenido se adapte a la altura del dispositivo */
+    padding: 20px; /* Añade un padding para evitar que el contenido toque los bordes */
+  }
+
+  .start-container, .quiz-container {
+    width: 100%; /* Asegura que los contenedores ocupen todo el ancho disponible */
+    height: auto; /* Permite que la altura sea dinámica */
+    padding: 20px; /* Añade padding para evitar que el contenido toque los bordes */
+  }
+
+  .start-image-wrapper, .quiz-wrapper {
+    width: 90%; /* Reduce el ancho de las imágenes y el contenedor del cuestionario */
   }
 
   .start-text {
-    font-size: 2rem; /* Reduce el tamaño del texto */
+    font-size: 2rem; /* Reduce el tamaño de la fuente para que el texto se ajuste mejor */
   }
 
   .quiz-container {
-    width: 90%; /* Ajusta el ancho del contenedor */
-    height: auto; /* Ajusta la altura automáticamente */
+    min-height: 250px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 30px; /* Ajusta la redondez para pantallas más pequeñas */
   }
 
-  .quiz-content {
-    font-size: 1rem; /* Reduce el tamaño del texto */
-    padding: 10px; /* Ajusta el relleno */
+  .question-section p {
+    font-size: 1.2rem; /* Ajusta el tamaño del texto de la pregunta */
+    margin-right: 0;
   }
 
-  .question-info {
-    font-size: 14px; /* Ajusta el tamaño del texto */
-  }
-
-  .blue-corner {
-    width: 40px; /* Ajusta el tamaño del corner */
-    height: 40px;
-  }
-
-  .feedback-text {
-    font-size: 30px; /* Ajusta el tamaño del texto de feedback */
+  .answers-section .answer-option {
+    font-size: 1rem; /* Reduce el tamaño de las opciones de respuesta */
+    margin-bottom: 10px;
   }
 
   .mani-image {
-    max-width: 150px; /* Ajusta el tamaño de la imagen */
-    right: -60px; /* Ajusta la posición de la imagen */
-  }
-
-  .congrats-overlay {
-    padding: 20px; /* Ajusta el padding */
+    top: 20px; /* Ajusta la posición de la imagen para evitar que se salga de la pantalla */
+    right: 0;
+    max-width: 150px; /* Reduce el tamaño de la imagen */
   }
 
   .congrats-content {
-    max-width: 100%; /* Ajusta el tamaño máximo del contenedor */
-    max-height: none; /* Permite que la altura se ajuste automáticamente */
-  }
-
-  .congrats-image {
-    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    max-width: 100%;
+    max-height: 90vh; /* Asegura que el contenido de felicitación no se salga de la pantalla */
+    padding: 10px;
   }
 
   .congrats-text, .specialist-text {
-    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    font-size: 2rem; /* Reduce el tamaño de la fuente para pantallas pequeñas */
+    padding: 0 10px;
   }
-}
-
-/* Media Query para tabletas */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .start-image {
-    width: 70%; /* Ajusta el tamaño de la imagen en tabletas */
-  }
-
-  .start-text {
-    font-size: 2.5rem; /* Ajusta el tamaño del texto */
-  }
-
-  .quiz-container {
-    width: 80%; /* Ajusta el ancho del contenedor */
-    height: auto; /* Ajusta la altura automáticamente */
-  }
-
-  .quiz-content {
-    font-size: 1.2rem; /* Ajusta el tamaño del texto */
-    padding: 15px; /* Ajusta el relleno */
-  }
-
-  .question-info {
-    font-size: 16px; /* Ajusta el tamaño del texto */
-  }
-
-  .blue-corner {
-    width: 45px; /* Ajusta el tamaño del corner */
-    height: 45px;
-  }
-
-  .feedback-text {
-    font-size: 35px; /* Ajusta el tamaño del texto de feedback */
-  }
-
-  .mani-image {
-    max-width: 175px; /* Ajusta el tamaño de la imagen */
-    right: -90px; /* Ajusta la posición de la imagen */
-  }
-
-  .congrats-overlay {
-    padding: 30px; /* Ajusta el padding */
-  }
-
-  .congrats-content {
-    max-width: 90%; /* Ajusta el tamaño máximo del contenedor */
-    max-height: 80vh; /* Ajusta la altura máxima */
-  }
-
-  .congrats-image {
-    max-width: 90%; /* Ajusta el tamaño máximo de la imagen */
-  }
-
-  .congrats-text, .specialist-text {
-    font-size: 1.8rem; /* Ajusta el tamaño del texto */
+  
+  .feedback-text{
+    font-size: 1.2rem;
   }
 }

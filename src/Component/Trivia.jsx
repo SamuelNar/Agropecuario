@@ -79,8 +79,7 @@ const Trivia = () => {
         // Reiniciar automáticamente después de 10 segundos
         const autoRestartTimer = setTimeout(() => {
           handleRestartQuiz();
-        }, 10000);
-  
+        }, 10000);  
         return () => clearTimeout(autoRestartTimer);
       }
 
@@ -148,8 +147,7 @@ const Trivia = () => {
                 <img src={imgCornerWhite} alt="Imagen Izquierda" className="start-image-left-congrats" />
                 <img src={Logo} alt="Imagen Derecha" className="start-image-right-congrat" />                
               </div>              
-            </div>
-            
+            </div>            
           ) : (
             <div className={`quiz-wrapper ${showQuiz ? "animate-quiz" : ""}`}>
               <div className="quiz-container">

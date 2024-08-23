@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import finImagen from "/assets/Fin.webp";
+import finImagen from "/assets/Maníconborde.png";
 import inicioImagen from "/assets/Maníconborde.png";
 import maniImagen from "/assets/Personaje.webp";
 import imgCorner from "/assets/Formaazul.png"
@@ -144,7 +144,9 @@ const Trivia = () => {
                 <div className="specialist-text">
                   Sos un especialista en maní como nosotros, y eso tiene un
                   premio
-                </div>                
+                </div>
+                <img src={imgCornerWhite} alt="Imagen Izquierda" className="start-image-left-congrats" />
+                <img src={Logo} alt="Imagen Derecha" className="start-image-right-congrat" />                
               </div>              
             </div>
             

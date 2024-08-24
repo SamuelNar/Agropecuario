@@ -51,7 +51,7 @@ const Trivia = () => {
 
       const feedbackMessage = isAnswerCorrect
         ? "¡Correcto! Seguimos en carrera."
-        : "Upps, creo que va a tener que conocer más sobre el mundo del maní! Te esperamos en nuestro staff.";
+        : "Upps, creo que va a tener que conocer más sobre el mundo del maní! Te esperamos en nuestro stand.";
 
       setFeedback({ message: feedbackMessage});
 
